@@ -11,7 +11,7 @@ const Footer = () => {
           
           <div className="flex items-center gap-6">
             <a
-              href="mailto:kakarla1@gmail.com"
+              href="mailto:kakarlalikhitha4505@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
