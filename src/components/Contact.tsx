@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, MapPin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -35,6 +35,12 @@ const Contact = () => {
       label: "Phone",
       value: "+91 9032535310",
       href: "tel:+919032535310",
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "Vijayawada, Andhra Pradesh",
+      href: "#",
     },
     {
       icon: Linkedin,
