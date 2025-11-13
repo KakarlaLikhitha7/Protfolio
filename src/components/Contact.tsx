@@ -11,6 +11,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
@@ -20,7 +21,7 @@ const Contact = () => {
       title: "Message Sent!",
       description: "Thank you for reaching out. I'll get back to you soon!",
     });
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   const contactInfo = [
@@ -70,6 +71,7 @@ const Contact = () => {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
           <Card className="bg-card border-border p-8 animate-fade-in-up">
+            <h3 className="text-2xl font-bold mb-6 text-foreground">Send Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
@@ -86,6 +88,15 @@ const Contact = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
+                  className="bg-background border-border"
+                />
+              </div>
+              <div>
+                <Input
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   required
                   className="bg-background border-border"
                 />
