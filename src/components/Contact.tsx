@@ -27,14 +27,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "kakarla1@gmail.com",
-      href: "mailto:kakarla1@gmail.com",
+      value: "kakarlalikhitha4505@gmail.com",
+      href: "mailto:kakarlalikhitha4505@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 9087654321",
-      href: "tel:+919087654321",
+      value: "+91 9032535310",
+      href: "tel:+919032535310",
     },
     {
       icon: Linkedin,
