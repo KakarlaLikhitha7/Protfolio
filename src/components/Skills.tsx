@@ -1,57 +1,19 @@
 import { Card } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+
 const Skills = () => {
   const skillCategories = [{
     category: "Programming Languages",
-    skills: [{
-      name: "C",
-      level: 85
-    }, {
-      name: "Java",
-      level: 80
-    }]
+    skills: ["C", "Java"]
   }, {
     category: "Web Development",
-    skills: [{
-      name: "HTML & CSS",
-      level: 90
-    }, {
-      name: "JavaScript",
-      level: 85
-    }, {
-      name: "JSP",
-      level: 75
-    }, {
-      name: "PHP",
-      level: 80
-    }]
+    skills: ["HTML & CSS", "JavaScript", "JSP", "PHP"]
   }, {
     category: "Databases",
-    skills: [{
-      name: "MySQL",
-      level: 85
-    }, {
-      name: "SQL",
-      level: 85
-    }, {
-      name: "PostgreSQL",
-      level: 80
-    }]
+    skills: ["MySQL", "SQL", "PostgreSQL"]
   }, {
     category: "Cloud & Tools",
-    skills: [{
-      name: "AWS Cloud",
-      level: 70
-    }, {
-      name: "GitHub",
-      level: 85
-    }, {
-      name: "Visual Studio",
-      level: 80
-    }, {
-      name: "XAMPP",
-      level: 75
-    }]
+    skills: ["AWS Cloud", "GitHub", "Visual Studio", "XAMPP"]
   }];
   return <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
@@ -61,20 +23,26 @@ const Skills = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {skillCategories.map((category, idx) => <Card key={category.category} style={{
-          animationDelay: `${idx * 0.1}s`
-        }} className="border-border p-6 hover:border-primary transition-all duration-300 animate-fade-in-up bg-slate-900">
+          {skillCategories.map((category, idx) => (
+            <Card 
+              key={category.category} 
+              style={{ animationDelay: `${idx * 0.1}s` }} 
+              className="border-border p-6 hover:border-primary transition-all duration-300 animate-fade-in-up bg-card"
+            >
               <h3 className="text-xl font-semibold mb-6 text-primary">{category.category}</h3>
-              <div className="space-y-4">
-                {category.skills.map(skill => <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-foreground font-medium">{skill.name}</span>
-                      <span className="text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
-                  </div>)}
+              <div className="flex flex-wrap gap-3">
+                {category.skills.map(skill => (
+                  <Badge 
+                    key={skill} 
+                    variant="secondary" 
+                    className="px-4 py-2 text-sm font-medium bg-primary/10 text-foreground hover:bg-primary/20 transition-colors"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
               </div>
-            </Card>)}
+            </Card>
+          ))}
         </div>
       </div>
     </section>;
