@@ -1,4 +1,4 @@
-import { GraduationCap, Brain, Code, Lightbulb, Users } from "lucide-react";
+import { Brain, Code, Lightbulb, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const About = () => {
@@ -19,26 +19,12 @@ const About = () => {
 
         <div className="max-w-4xl mx-auto">
           <Card className="bg-background border-border p-8 mb-8 animate-fade-in-up">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               I'm a B.Tech CSE (AI & ML) student passionate about technology, innovation, and continuous learning. 
               I enjoy exploring how artificial intelligence and machine learning can solve real-world problems and 
               make life easier. I'm driven by curiosity, creativity, and a desire to build intelligent systems that 
               have a positive impact on society.
             </p>
-
-            <div className="flex items-start gap-4 bg-muted p-6 rounded-lg">
-              <GraduationCap className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">Education</h3>
-                <p className="text-muted-foreground">
-                  <span className="font-medium text-foreground">B.Tech in Computer Science Engineering (AI & ML)</span>
-                  <br />
-                  Lakireddy Bali Reddy College of Engineering
-                  <br />
-                  <span className="text-primary">Graduating in 2026</span>
-                </p>
-              </div>
-            </div>
           </Card>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
