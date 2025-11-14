@@ -91,8 +91,32 @@ const Contact = () => {
         </div>
 
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+          {/* Contact Info */}
+          <div className="space-y-4 animate-fade-in-up">
+            {contactInfo.map((info) => (
+              <a
+                key={info.label}
+                href={info.href}
+                target={info.href.startsWith("http") ? "_blank" : undefined}
+                rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              >
+                <Card className="bg-card border-border p-6 hover:border-primary transition-all duration-300 hover:glow-teal cursor-pointer">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <info.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">{info.label}</p>
+                      <p className="text-foreground font-medium">{info.value}</p>
+                    </div>
+                  </div>
+                </Card>
+              </a>
+            ))}
+          </div>
+
           {/* Contact Form */}
-          <Card className="bg-card border-border p-8 animate-fade-in-up">
+          <Card className="bg-card border-border p-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
             <h3 className="text-2xl font-bold mb-6 text-foreground">Send Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -138,30 +162,6 @@ const Contact = () => {
               </Button>
             </form>
           </Card>
-
-          {/* Contact Info */}
-          <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-            {contactInfo.map((info) => (
-              <a
-                key={info.label}
-                href={info.href}
-                target={info.href.startsWith("http") ? "_blank" : undefined}
-                rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              >
-                <Card className="bg-card border-border p-6 hover:border-primary transition-all duration-300 hover:glow-teal cursor-pointer">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{info.label}</p>
-                      <p className="text-foreground font-medium">{info.value}</p>
-                    </div>
-                  </div>
-                </Card>
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </section>
