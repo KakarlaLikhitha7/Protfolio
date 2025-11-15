@@ -1,17 +1,40 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { Award, Cloud, Code, Database, Shield } from "lucide-react";
 
 const Certifications = () => {
-  const globalCertifications = [
-    "AWS Cloud Practitioner"
-  ];
+  const globalCertification = {
+    name: "AWS Cloud Practitioner",
+    icon: Cloud,
+    type: "Global"
+  };
 
-  const certifications = [
-    "HTML5, Programming using Java, Javascript – Infosys SpringBoard",
-    "PCAP - Programming Essentials in Python, Cybersecurity Essentials, Introduction to Packet Tracer - Cisco",
-    "SQL(Basic), Java (Basic) – HackerRank",
-    "Introduction to IoT - NPTEL"
+  const certificationGroups = [
+    {
+      provider: "Infosys SpringBoard",
+      icon: Code,
+      certs: ["HTML5", "Programming using Java", "Javascript"]
+    },
+    {
+      provider: "Cisco",
+      icon: Shield,
+      certs: [
+        "PCAP - Programming Essentials in Python",
+        "Cybersecurity Essentials",
+        "Introduction to Packet Tracer"
+      ]
+    },
+    {
+      provider: "HackerRank",
+      icon: Database,
+      certs: ["SQL (Basic)", "Java (Basic)"]
+    },
+    {
+      provider: "NPTEL",
+      icon: Code,
+      certs: ["Introduction to IoT"]
+    }
   ];
 
   return (
@@ -22,45 +45,59 @@ const Certifications = () => {
           <p className="text-muted-foreground">Professional certifications and accomplishments</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Global Certifications */}
-          <Card className="animate-fade-in hover-scale">
+        <div className="max-w-5xl mx-auto space-y-6">
+          {/* Global Certification - Featured */}
+          <Card className="animate-fade-in hover-scale border-primary/50 bg-gradient-to-br from-card to-card/50">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Award className="text-primary" />
-                Global Certification
+              <CardTitle className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <Award className="text-primary w-6 h-6" />
+                </div>
+                <span>Global Certification</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
-                {globalCertifications.map((cert, index) => (
-                  <div key={index} className="flex items-start gap-2">
-                    <Badge variant="default" className="mt-1">
-                      {cert}
-                    </Badge>
-                  </div>
-                ))}
+              <div className="flex items-center gap-3 p-4 rounded-lg bg-background/50 border border-primary/20">
+                <globalCertification.icon className="text-primary w-5 h-5" />
+                <div className="flex-1">
+                  <p className="font-semibold text-foreground">{globalCertification.name}</p>
+                  <p className="text-sm text-muted-foreground">Amazon Web Services</p>
+                </div>
+                <Badge variant="default" className="bg-primary">Certified</Badge>
               </div>
             </CardContent>
           </Card>
 
-          {/* Other Certifications */}
+          {/* Platform-specific Certifications */}
           <Card className="animate-fade-in hover-scale">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Award className="text-primary" />
-                Certifications
+              <CardTitle className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-secondary/10">
+                  <Award className="text-secondary w-6 h-6" />
+                </div>
+                <span>Platform Certifications</span>
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <ul className="space-y-3">
-                {certifications.map((cert, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span className="text-sm">{cert}</span>
-                  </li>
-                ))}
-              </ul>
+            <CardContent className="space-y-6">
+              {certificationGroups.map((group, groupIndex) => (
+                <div key={groupIndex}>
+                  {groupIndex > 0 && <Separator className="mb-6" />}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 mb-3">
+                      <group.icon className="text-secondary w-5 h-5" />
+                      <h3 className="font-semibold text-foreground">{group.provider}</h3>
+                    </div>
+                    <div className="pl-7 space-y-2">
+                      {group.certs.map((cert, certIndex) => (
+                        <div key={certIndex} className="flex items-start gap-2">
+                          <span className="text-secondary mt-1 text-xs">▪</span>
+                          <span className="text-sm text-muted-foreground">{cert}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </CardContent>
           </Card>
         </div>
