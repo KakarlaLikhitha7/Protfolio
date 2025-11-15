@@ -1,39 +1,50 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Award, Cloud, Code, Database, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Award, Cloud, Code, Database, Shield, ExternalLink } from "lucide-react";
 
 const Certifications = () => {
   const globalCertification = {
     name: "AWS Cloud Practitioner",
     icon: Cloud,
-    type: "Global"
+    type: "Global",
+    link: "/certificates/aws-cloud-practitioner.pdf"
   };
 
   const certificationGroups = [
     {
       provider: "Infosys SpringBoard",
       icon: Code,
-      certs: ["HTML5", "Programming using Java", "Javascript"]
+      certs: [
+        { name: "HTML5", link: "/certificates/html5.pdf" },
+        { name: "Programming using Java", link: "/certificates/programming-java.pdf" },
+        { name: "Javascript", link: "/certificates/javascript.pdf" }
+      ]
     },
     {
       provider: "Cisco",
       icon: Shield,
       certs: [
-        "PCAP - Programming Essentials in Python",
-        "Cybersecurity Essentials",
-        "Introduction to Packet Tracer"
+        { name: "PCAP - Programming Essentials in Python", link: "/certificates/pcap-python.pdf" },
+        { name: "Cybersecurity Essentials", link: "/certificates/cybersecurity-essentials.pdf" },
+        { name: "Introduction to Packet Tracer", link: "/certificates/packet-tracer.pdf" }
       ]
     },
     {
       provider: "HackerRank",
       icon: Database,
-      certs: ["SQL (Basic)", "Java (Basic)"]
+      certs: [
+        { name: "SQL (Basic)", link: "/certificates/sql-basic.pdf" },
+        { name: "Java (Basic)", link: "/certificates/java-basic.pdf" }
+      ]
     },
     {
       provider: "NPTEL",
       icon: Code,
-      certs: ["Introduction to IoT"]
+      certs: [
+        { name: "Introduction to IoT", link: "/certificates/iot-nptel.pdf" }
+      ]
     }
   ];
 
@@ -63,7 +74,14 @@ const Certifications = () => {
                   <p className="font-semibold text-foreground">{globalCertification.name}</p>
                   <p className="text-sm text-muted-foreground">Amazon Web Services</p>
                 </div>
-                <Badge variant="default" className="bg-primary">Certified</Badge>
+                <div className="flex items-center gap-2">
+                  <Badge variant="default" className="bg-primary">Certified</Badge>
+                  <Button variant="ghost" size="sm" asChild>
+                    <a href={globalCertification.link} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -89,9 +107,14 @@ const Certifications = () => {
                     </div>
                     <div className="pl-7 space-y-2">
                       {group.certs.map((cert, certIndex) => (
-                        <div key={certIndex} className="flex items-start gap-2">
+                        <div key={certIndex} className="flex items-start gap-2 group/cert">
                           <span className="text-secondary mt-1 text-xs">▪</span>
-                          <span className="text-sm text-muted-foreground">{cert}</span>
+                          <span className="text-sm text-muted-foreground flex-1">{cert.name}</span>
+                          <Button variant="ghost" size="sm" className="h-6 w-6 p-0 opacity-0 group-hover/cert:opacity-100 transition-opacity" asChild>
+                            <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          </Button>
                         </div>
                       ))}
                     </div>
