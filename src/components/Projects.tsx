@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -9,18 +9,24 @@ const Projects = () => {
       description: "Frontend website with user-friendly product display showcasing ice cream products with an elegant and responsive design.",
       tech: ["HTML", "CSS", "JavaScript"],
       color: "from-primary to-primary/70",
+      projectUrl: "#", // Replace with your project URL
+      githubUrl: "#", // Replace with your GitHub repository URL
     },
     {
       title: "LuxLiving",
       description: "Dynamic e-commerce platform for online shopping with full backend integration, user authentication, and product management.",
       tech: ["PHP", "PostgreSQL", "HTML", "CSS"],
       color: "from-secondary to-secondary/70",
+      projectUrl: "#", // Replace with your project URL
+      githubUrl: "#", // Replace with your GitHub repository URL
     },
     {
       title: "Cyber Hacking Breaches",
       description: "Cybersecurity project focused on detecting and analyzing hacking breaches using machine learning algorithms.",
       tech: ["Python", "Machine Learning"],
       color: "from-destructive to-destructive/70",
+      projectUrl: "#", // Replace with your project URL
+      githubUrl: "#", // Replace with your GitHub repository URL
     },
   ];
 
@@ -45,7 +51,26 @@ const Projects = () => {
                   <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <div className="flex gap-2">
+                    <a
+                      href={project.projectUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                  </div>
                 </div>
                 <p className="text-muted-foreground mb-4 min-h-[80px]">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
