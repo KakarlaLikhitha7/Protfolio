@@ -9,13 +9,13 @@ const Projects = () => {
       description: "Frontend website with user-friendly product display showcasing ice cream products with an elegant and responsive design.",
       tech: ["HTML", "CSS", "JavaScript"],
       color: "from-primary to-primary/70",
-      projectUrl: "#", // Replace with your project URL
-      githubUrl: "#", // Replace with your GitHub repository URL
+      projectUrl: "https://creamy-delight-hub.vercel.app/",
+      githubUrl: "https://github.com/KakarlaLikhitha7/Creamy-Delight-Hub.git",
     },
     {
       title: "LuxLiving",
       description: "Dynamic e-commerce platform for online shopping with full backend integration, user authentication, and product management.",
-      tech: ["PHP", "PostgreSQL", "HTML", "CSS"],
+      tech: ["HTML", "CSS", "PHP", "PostgreSQL"],
       color: "from-secondary to-secondary/70",
       projectUrl: "#", // Replace with your project URL
       githubUrl: "#", // Replace with your GitHub repository URL
