@@ -4,8 +4,12 @@ import { Download, FileText } from "lucide-react";
 
 const Resume = () => {
   const handleDownload = () => {
-    // Add your resume download link here
-    console.log("Download resume");
+    const link = document.createElement('a');
+    link.href = '/LikhithaResume.pdf';
+    link.download = 'Likhitha_Kakarla_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
