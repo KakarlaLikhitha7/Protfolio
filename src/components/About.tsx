@@ -20,10 +20,9 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="bg-background border-border p-8 mb-8 animate-fade-in-up">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a B.Tech CSE (AI & ML) student passionate about technology, innovation, and continuous learning. 
-              I enjoy exploring how artificial intelligence and machine learning can solve real-world problems and 
-              make life easier. I'm driven by curiosity, creativity, and a desire to build intelligent systems that 
-              have a positive impact on society.
+              Motivated and detail-oriented developer with hands-on experience in real-world projects across Web Development and AI&ML. 
+              Seeking an opportunity to contribute to innovative, scalable applications while applying strong problem-solving abilities 
+              and a continuous learning mindset to deliver impactful solutions in a dynamic organization.
             </p>
           </Card>
 

@@ -6,7 +6,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Creamy Delight Hub",
-      description: "Frontend website with user-friendly product display showcasing ice cream products with an elegant and responsive design.",
+      description: "Frontend website with user-friendly product display showcasing ice cream products.",
       tech: ["HTML", "CSS", "JavaScript"],
       color: "from-primary to-primary/70",
       projectUrl: "https://creamy-delight-hub.vercel.app/",
@@ -14,7 +14,7 @@ const Projects = () => {
     },
     {
       title: "LuxLiving",
-      description: "Dynamic e-commerce platform for online shopping with full backend integration, user authentication, and product management.",
+      description: "Online e-commerce platform with dynamic pricing for seamless shopping experience.",
       tech: ["HTML", "CSS", "PHP", "PostgreSQL"],
       color: "from-secondary to-secondary/70",
       projectUrl: "#", // Replace with your project URL
@@ -22,8 +22,8 @@ const Projects = () => {
     },
     {
       title: "Cyber Hacking Breaches",
-      description: "Cybersecurity project focused on detecting and analyzing hacking breaches using machine learning algorithms.",
-      tech: ["Python", "Machine Learning"],
+      description: "Cybersecurity project on detecting and analyzing hacking breaches using Python.",
+      tech: ["Python"],
       color: "from-destructive to-destructive/70",
       projectUrl: "#", // Replace with your project URL
       githubUrl: "#", // Replace with your GitHub repository URL

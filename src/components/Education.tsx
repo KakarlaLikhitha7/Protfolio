@@ -21,10 +21,10 @@ const Education = () => {
     },
     {
       icon: School,
-      degree: "Secondary Education",
+      degree: "Secondary Education (SSC)",
       institution: "Siddhartha English Medium High School",
       period: "2019 - 2020",
-      score: "Percentage: 82.65%",
+      score: "GPA: 8.7",
       color: "text-accent"
     }
   ];
