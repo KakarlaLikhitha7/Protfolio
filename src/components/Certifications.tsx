@@ -37,6 +37,12 @@ const Certifications = () => {
     }
   ];
 
+  const achievements = [
+    "Participated in a Hackathon Conducted by Brainovision",
+    "Participated in coding events and workshops (IoT)",
+    "Served as Coordinator for Medha-2024 Lakshya Event at LBRCE"
+  ];
+
   return (
     <section id="certifications" className="py-20 px-4">
       <div className="container mx-auto">
@@ -98,6 +104,28 @@ const Certifications = () => {
                   </div>
                 </div>
               ))}
+            </CardContent>
+          </Card>
+
+          {/* Academic Achievements */}
+          <Card className="animate-fade-in hover-scale">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-accent/10">
+                  <Award className="text-accent w-6 h-6" />
+                </div>
+                <span>Academic Achievements</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <span className="text-accent mt-1">▪</span>
+                    <span className="text-sm text-muted-foreground">{achievement}</span>
+                  </div>
+                ))}
+              </div>
             </CardContent>
           </Card>
         </div>
