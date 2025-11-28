@@ -10,10 +10,10 @@ const Skills = () => {
     skills: ["HTML", "CSS", "JavaScript"]
   }, {
     category: "Databases",
-    skills: ["MySQL", "SQL", "PL/SQL (Basic)"]
+    skills: ["MySQL", "SQL", "PL/SQL"]
   }, {
     category: "Cloud & Tools",
-    skills: ["AWS Cloud (Basics)", "GitHub", "Visual Studio", "XAMPP"]
+    skills: ["AWS Cloud", "GitHub", "Visual Studio", "XAMPP"]
   }];
   return <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
